@@ -4,7 +4,9 @@ import './globals.css';
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter'
+  variable: '--font-inter',
+  preload: true,
+  fallback: ['system-ui', 'arial']
 });
 
 export const metadata = {
@@ -14,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html lang="en" className={inter.className}>
       <body className="antialiased">
         {children}
       </body>
